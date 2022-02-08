@@ -1,13 +1,22 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  description: MyText
-  image_url: MyString
+  title: SHIBA EYEGLASS
+  description: Lorem lorem lorem ipsum
+  image_url: shib_eyeglass.png
   price: 9.99
 
 two:
-  title: MyString
-  description: MyText
-  image_url: MyString
+  title: Shiba Gun
+  description: MyTLorem lorem lorem ipsumext
+  image_url: shib_gun.png
   price: 9.99
+
+ruby:
+  title: Shiba Samurai
+  description:
+    Ruby is the fastest growing and most exciting dynamic
+    language out there. If you need to get working programs
+    delivered fast, you should add Ruby to your toolbox.
+  price: 49.50
+  image_url: shib_samurai.png

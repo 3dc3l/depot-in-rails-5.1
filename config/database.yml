@@ -25,4 +25,4 @@ test:
 
 production:
   <<: *default
-  database: db_depot_new
+  database: db_depot_new_production
