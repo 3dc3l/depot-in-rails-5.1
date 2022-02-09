@@ -30,7 +30,8 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       if @line_item.save
         session[:counter] = 0
-        format.html { redirect_to @line_item.cart }
+        format.html { redirect_to store_index_url }
+        format.js { @current_item = @line_item }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -55,13 +56,16 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1 or /line_items/1.json
   def destroy
 
-   @line_item.destroy
+    if (@line_item.quantity <= 1) 
+      @line_item.destroy
+    else
+      item_quantity = @line_item.quantity -= 1
+      @line_item.update(quantity: item_quantity)
+    end
 
     respond_to do |format|
-      format.html {
-        redirect_to cart_path(session[:cart_id]),
-        notice: 'Successfuly removed one cart item'
-      }
+      format.html {redirect_to store_index_url }
+      format.json { render :show, status: :ok, location: @line_item }
     end
   end
 

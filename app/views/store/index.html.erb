@@ -3,7 +3,7 @@
 <% end %>
 
 <h1>Your Pragmatic Catalog</h1>
-<%= pluralize(session[:counter], "page load") if session[:counter] > 5 %>
+<%= pluralize(session[:counter], "index method visit") if session[:counter] > 5 %>
 
 <ul class="catalog">
   <% cache @products do %>
@@ -11,7 +11,10 @@
       <li>
         <% cache product do %>
           <div class="thumbnail">
-            <%= image_tag(product.image_url) %>
+            <%= link_to (image_tag(product.image_url)), 
+                line_items_path(product_id: product), 
+                method: :post, 
+                remote: true %>
           </div>
           <div class="card_content">
             <h2><%= product.title %></h2>
@@ -20,7 +23,9 @@
             </p>
             <div class="price">
               <%= number_to_currency(product.price) %>
-              <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
+              <%= button_to 'Add to Cart', 
+                  line_items_path(product_id: product), 
+                  remote: true %>
             </div>
           </div>
         <% end %>
