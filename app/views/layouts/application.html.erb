@@ -9,8 +9,22 @@
   </head>
 
   <body>
-    <main class='<%= controller.controller_name %>'>
-      <%= yield %>
-    </main>
-  </body>
+    <header class="main">
+      <%= image_tag 'shib_eyeglass.png', alt: 'The Pragmatic Bookshelf' %>
+      <h1><%= @page_title %></h1>
+    </header>
+    <section class="content">
+      <nav class="side_nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/questions">Questions</a></li>
+          <li><a href="/news">News</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <%= Time.now.strftime("%d of %B, %Y - %I:%M %p") %>
+      </nav>
+			<main class='<%= controller.controller_name %>'>
+        <%= yield %>
+      </main>
+    </section>
 </html>
