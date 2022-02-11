@@ -36,6 +36,8 @@ config.webpacker.check_yarn_integrity = true
 
   config.action_mailer.perform_caching = false
 
+  config.action_mailer.delivery_method = :test
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -56,4 +58,5 @@ config.webpacker.check_yarn_integrity = true
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  
 end
