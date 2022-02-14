@@ -1,24 +1,31 @@
 import React from 'react'
 
-class CheckPayType extends React.Component {
+class CreditCardPayType extends React.Component {
   render() {
     return (
       <div>
         <div className="field">
-          <label htmlFor="order_routing_number">Routing #</label>
+          <label htmlFor="order_credit_card_number">
+            {I18n.t("orders.form.credit_card_pay_type.cc_number")}
+          </label>
+
           <input type="password"
-                 name="order[routing_number]" 
-                 id="order_routing_number" />
+                 name="order[credit_card_number]" 
+                 id="order_credit_card_number" />
         </div>
         <div className="field">
-          <label htmlFor="order_account_number">Account #</label>
+          <label htmlFor="order_expiration_date">
+            {I18n.t("orders.form.credit_card_pay_type.expiration_date")}
+          </label>
+
           <input type="text"
-                 name="order[account_number]" 
-                 id="order_account_number" />
+                 name="order[expiration_date]" 
+                 id="order_expiration_date"
+                 size="9"
+                 placeholder="e.g. 03/19" />
         </div>
       </div>
     );
   }
 }
-
-export default CheckPayType
+export default CreditCardPayType
