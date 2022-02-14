@@ -1,7 +1,0 @@
-one:
-  name: dave
-  password_digest: <%= BCrypt::Password.create('developer') %>
-
-two:
-  name: susannah
-  password_digest: <%= BCrypt::Password.create('developer') %>

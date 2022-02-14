@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  get 'admin' => 'admin#index'
-  controller :sessions do
-    get  'login' => :new
-    post 'login' => :create
-    delete 'logout' => :destroy
+  devise_for :users
+  
+  # get 'admin' => 'admin#index'
+  # controller :sessions do
+  #   get  'login' => :new
+  #   post 'login' => :create
+  #   delete 'logout' => :destroy
+  # end
+  authenticated :user do
+    root "admin#index", as: :authenticated_root
   end
 
   resources :users
