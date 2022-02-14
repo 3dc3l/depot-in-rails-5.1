@@ -21,7 +21,13 @@
     padding: 0;
   }
   header.main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     text-align: center; // center on mobile
+    z-index: 2;
     img {
         width: 172px;
         height: 100%;
@@ -48,8 +54,7 @@
   }
   .content {
     margin: 0;
-    padding: 0;
-  
+    padding: 233px 0 0;
     display: flex;
     display: -webkit-flex;
     flex-direction: column; // mobile is horizontally laid out
@@ -61,7 +66,16 @@
       -webkit-box-orient: horizontal;
     }
   
-    nav {
+    .side_nav {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      height: 100%;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      z-index: 1;
       padding-bottom: 1em;
       background: #141;
       text-align: center;  // mobile has centered nav
@@ -94,6 +108,7 @@
     }
     main {
       padding: 0.5em;
+      margin-left: 291px;
     }
     #cart {
       article {
