@@ -36,6 +36,7 @@ gem 'webpacker', '~> 3.0'
 
 gem 'i18n-js'
 
+gem 'kaminari', '~> 1.2', '>= 1.2.1'
 
 gem 'devise'
 
